@@ -19,8 +19,8 @@ Follow these steps to set up the Portfolio Builder project:
 1. **Fork and Clone the Repository**:
 
     ```bash
-    git clone <repository-url>
-    cd <repository-folder>
+    git clone https://github.com/anuja-rahul/portfolio-builder
+    cd portfolio-builder
     ```
 
 2. **Install Dependencies**:
