@@ -1,3 +1,7 @@
+import { FaBloggerB, FaHome, FaProjectDiagram } from "react-icons/fa";
+import { LuText } from "react-icons/lu";
+import { RiContactsLine } from "react-icons/ri";
+
 export type siteConfig = typeof siteConfig;
 export type NavBarConfig = typeof navBarConfig;
 
@@ -13,9 +17,13 @@ export const siteConfig = {
 };
 
 export const navBarConfig = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/#" },
-  { name: "Projects", href: "/projects" },
-  { name: "Contact", href: "/contact" },
-  { name: "Blog", href: "/blog" },
+  { name: "Home", href: "/", icon: <FaHome /> },
+  { name: "About", href: "/about", icon: <LuText /> },
+  { name: "Projects", href: "/projects", icon: <FaProjectDiagram /> },
+  { name: "Contact", href: "/contact", icon: <RiContactsLine /> },
+  { name: "Blog", href: "/blog", icon: <FaBloggerB /> },
 ];
+
+export const homePageConfig = {
+  title: "Jhon",
+};

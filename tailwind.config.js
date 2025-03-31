@@ -12,6 +12,7 @@ module.exports = {
     extend: {
       fontFamily: {
         "mona-sans": ["mona-sans", "sans-serif"],
+        "fascinate-regular": ["fascinate-regular", "sans-serif"],
       },
     },
   },

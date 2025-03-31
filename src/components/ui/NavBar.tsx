@@ -1,13 +1,13 @@
 "use client";
 
 import { navBarConfig } from "@/config/site";
-import { ReactNode, useState } from "react";
+import { ReactNode, useRef, useState } from "react";
 import TransitionLink from "../page-transition/TransitionLink";
 import { motion } from "motion/react";
 
 export default function NavBar() {
   return (
-    <div className="w-screen mt-4 font-mona-sans squishy-text">
+    <div className="w-screen mt-4 font-mona-sans squishy-text z-10 absolute">
       <SlideTabs />
     </div>
   );
@@ -21,10 +21,19 @@ const SlideTabs = () => {
   });
 
   return (
-    <ul className="relative mx-auto flex w-fit rounded-full border-2 border-black bg-white p-1">
+    <ul
+      onMouseLeave={() => {
+        setPosition((pv) => ({
+          ...pv,
+          opacity: 0,
+        }));
+      }}
+      className="relative mx-auto flex w-fit rounded-full border-2 border-black bg-white p-1"
+    >
       {navBarConfig.map((item) => (
-        <Tab key={item.name} href={item.href}>
-          {item.name}
+        <Tab key={item.name} href={item.href} setPosition={setPosition}>
+          <span className="hidden md:flex">{item.name}</span>
+          <span className="flex md:hidden">{item.icon}</span>
         </Tab>
       ))}
       <Cursor position={position} />
@@ -32,11 +41,29 @@ const SlideTabs = () => {
   );
 };
 
-const Tab = ({ children, href }: { children: ReactNode; href: string }) => {
+const Tab = ({
+  children,
+  href,
+  setPosition,
+}: {
+  children: ReactNode;
+  href: string;
+  setPosition: React.Dispatch<
+    React.SetStateAction<{ left: number; width: number; opacity: number }>
+  >;
+}) => {
+  const ref = useRef<HTMLLIElement>(null);
   return (
     <li
+      ref={ref}
+      onMouseEnter={() => {
+        if (!ref.current) return;
+
+        const { width } = ref.current.getBoundingClientRect();
+        setPosition({ width, opacity: 1, left: ref.current.offsetLeft });
+      }}
       className="relative z-10 block curser-pointer px-3 py-1.5 text-xs uppercase
-      text-white mix-blend-difference md:px-4 md:py-2 md:text-sm"
+            text-white mix-blend-difference md:px-4 md:py-2 md:text-sm"
     >
       <TransitionLink href={href}>{children}</TransitionLink>
     </li>
@@ -50,11 +77,12 @@ const Cursor = ({
 }) => {
   return (
     <motion.li
-      className="absolute z-0 h-[29px] rounded-full bg-black md:h-9"
-      style={{
-        left: position.left,
-        width: position.width,
-        opacity: position.opacity,
+      className="absolute z-0 h-[25px] rounded-full bg-black md:h-9"
+      animate={position}
+      transition={{
+        type: "spring",
+        stiffness: 500,
+        damping: 35,
       }}
     />
   );
