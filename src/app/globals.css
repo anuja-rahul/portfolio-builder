@@ -1,0 +1,56 @@
+@import url("https://fonts.cdnfonts.com/css/general-sans");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  width: 100dvw;
+  overflow-x: hidden;
+  background-color: #dfdff0;
+  font-family: "General Sans", sans-serif;
+}
+
+@layer base {
+  @font-face {
+    font-family: "mona-sans";
+    src: url("/fonts/Mona-Sans.woff2") format("woff2");
+  }
+}
+
+@layer utilities {
+  .squishy-text {
+    font-stretch: 95%;
+  }
+
+  .extra-squishy-text {
+    font-stretch: 80%;
+  }
+}
+
+/* Page view transition properties */
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none !important;
+}
+
+::view-transition-group(root) {
+  z-index: auto !important;
+}
+
+::view-transition-image-pair(root) {
+  isolation: isolate;
+  will-change: transform, opacity, clip-path;
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 10000;
+  animation: none !important;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+  animation: none !important;
+}
