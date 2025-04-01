@@ -1,4 +1,14 @@
 import About from "@/components/about/About";
+import { siteConfig } from "@/config/site";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    default: `About me`,
+    template: `%s - About me`,
+  },
+  description: siteConfig.description,
+};
 
 export default function AboutPage() {
   return (
