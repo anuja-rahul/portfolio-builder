@@ -21,6 +21,7 @@ export default function Hero() {
 
       gsap.set([prefixText.words, heroText.chars, suffixText.words], {
         y: 400,
+        opacity: 0,
       });
 
       tl.to([prefixText.words, suffixText.words, heroText.chars], {
@@ -29,6 +30,7 @@ export default function Hero() {
         stagger: 0.075,
         ease: "power4.out",
         delay: 1,
+        opacity: 1,
       });
     },
     { scope: containerRef }

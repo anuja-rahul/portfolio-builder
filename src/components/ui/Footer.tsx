@@ -15,7 +15,12 @@ export default function Footer() {
           {siteConfig.contactLinks.map((item) => (
             <span key={item.name} className="flex w-fit h-fit">
               {item.link && (
-                <Link href={item.link} className="text-white mx-2 transition-all duration-200 hover:-translate-y-[2px] ease-in-out">
+                <Link
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={item.link}
+                  className="text-white mx-2 transition-all duration-200 hover:-translate-y-[2px] ease-in-out"
+                >
                   {item.icon}
                 </Link>
               )}

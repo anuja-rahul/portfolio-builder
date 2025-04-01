@@ -1,6 +1,16 @@
 import { projectsPageConfig } from "@/config/site";
 import { cn } from "@/lib/util";
 import Image from "next/image";
+import ButtonLink from "../ButtonLink";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+
+interface BentoProps {
+  className?: string;
+}
+
+gsap.registerPlugin(useGSAP);
 
 function BentoCard({
   children,
@@ -21,9 +31,14 @@ function BentoCard({
   );
 }
 
-function FeatureOne() {
+function FeatureOne({ className }: BentoProps) {
   return (
-    <BentoCard className="p-0 sm:row-span-2 border dark:border-zinc-700 min-h-[250px] relative overflow-hidden">
+    <BentoCard
+      className={cn(
+        "p-0 sm:row-span-2 border dark:border-zinc-700 min-h-[250px] relative overflow-hidden",
+        className
+      )}
+    >
       <Image
         src={projectsPageConfig.projects[0].imgUrl}
         alt="Project Image"
@@ -42,15 +57,29 @@ function FeatureOne() {
               {projectsPageConfig.projects[0].description}
             </p>
           </div>
+          <ButtonLink
+            external={true}
+            href={projectsPageConfig.projects[0].projectUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="scale-75"
+          >
+            View Project
+          </ButtonLink>
         </div>
       </div>
     </BentoCard>
   );
 }
 
-function FeatureTwo() {
+function FeatureTwo({ className }: BentoProps) {
   return (
-    <BentoCard className="flex flex-col gap-2 border bg-background dark:border-zinc-700 min-h-[250px] relative overflow-hidden">
+    <BentoCard
+      className={cn(
+        "flex flex-col gap-2 border bg-background dark:border-zinc-700 min-h-[250px] relative overflow-hidden",
+        className
+      )}
+    >
       <Image
         src={projectsPageConfig.projects[1].imgUrl}
         alt="Project Image"
@@ -69,15 +98,29 @@ function FeatureTwo() {
               {projectsPageConfig.projects[1].description}
             </p>
           </div>
+          <ButtonLink
+            external={true}
+            href={projectsPageConfig.projects[1].projectUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="scale-75"
+          >
+            View Project
+          </ButtonLink>
         </div>
       </div>
     </BentoCard>
   );
 }
 
-function FeatureThree() {
+function FeatureThree({ className }: BentoProps) {
   return (
-    <BentoCard className="flex flex-col gap-2 border bg-background dark:border-zinc-700 min-h-[250px] relative overflow-hidden">
+    <BentoCard
+      className={cn(
+        "flex flex-col gap-2 border bg-background dark:border-zinc-700 min-h-[250px] relative overflow-hidden",
+        className
+      )}
+    >
       <Image
         src={projectsPageConfig.projects[2].imgUrl}
         alt="Project Image"
@@ -95,6 +138,15 @@ function FeatureThree() {
               {projectsPageConfig.projects[2].description}
             </p>
           </div>
+          <ButtonLink
+            external={true}
+            href={projectsPageConfig.projects[2].projectUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="scale-75"
+          >
+            View Project
+          </ButtonLink>
         </div>
       </div>
     </BentoCard>
@@ -102,11 +154,34 @@ function FeatureThree() {
 }
 
 export default function ProjectBento() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  useGSAP(
+    () => {
+      const tl = gsap.timeline();
+      gsap.set([".bento-box"], {
+        y: 100,
+        opacity: 0,
+      });
+
+      tl.to(".bento-box", {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: "power4.out",
+        delay: 1.4,
+      });
+    },
+    { scope: containerRef }
+  );
   return (
-    <div className="grid grid-cols-1 grid-rows-1 gap-3 sm:grid-cols-2 sm:grid-rows-2 min-h-[500px] w-full">
-      <FeatureOne />
-      <FeatureTwo />
-      <FeatureThree />
+    <div
+      ref={containerRef}
+      className="grid grid-cols-1 grid-rows-1 gap-3 sm:grid-cols-2 sm:grid-rows-2 min-h-[500px] w-full"
+    >
+      <FeatureOne className="bento-box" />
+      <FeatureTwo className="bento-box" />
+      <FeatureThree className="bento-box" />
     </div>
   );
 }
