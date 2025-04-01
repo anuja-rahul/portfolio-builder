@@ -57,9 +57,11 @@ export default function RootLayout({
       <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable}`}>
           <SmoothScrollContext>
-            <NavBar />
-            {children}
-            <Footer />
+            <div className="bg-black">
+              <NavBar />
+              {children}
+              <Footer />
+            </div>
           </SmoothScrollContext>
         </body>
       </html>
