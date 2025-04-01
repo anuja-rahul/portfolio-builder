@@ -48,7 +48,7 @@ export const navBarConfig = [
 
 export const homePageConfig = {
   // short name or pet name of the user
-  title: "Jhon",
+  title: "John",
 };
 
 export const aboutPageConfig = {
