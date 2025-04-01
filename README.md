@@ -55,7 +55,7 @@ To get started with this portfolio builder template:
       npm install --legacy-peer-deps
       ```
 
-    > **Note**: Always use the `--legacy-peer-deps` flag when installing dependencies to avoid potential errors with peer dependencies.
+    > **Note**: Always use the `--legacy-peer-deps` or `--force` flag when installing dependencies to avoid potential errors with peer dependencies.
 
 You are now ready to customize and build your portfolio!
 

@@ -23,39 +23,19 @@ export default function Hero() {
         y: 400,
       });
 
-      tl.to(prefixText.words, {
+      tl.to([prefixText.words, suffixText.words, heroText.chars], {
         y: 0,
         duration: 0.8,
         stagger: 0.075,
         ease: "power4.out",
         delay: 1,
-      })
-        .to(
-          heroText.chars,
-          {
-            y: 0,
-            duration: 1,
-            stagger: 0.075,
-            ease: "back.out(1)",
-          },
-          "-=0.5"
-        )
-        .to(
-          suffixText.words,
-          {
-            y: 0,
-            duration: 0.6,
-            stagger: 0.07,
-            ease: "power4.out",
-          },
-          "-=0.6"
-        );
+      });
     },
     { scope: containerRef }
   );
 
   return (
-    <section className="w-screen min-h-dvh flex flex-col items-center justify-center bg-black gap-6 text-white">
+    <section className="w-screen min-h-dvh flex flex-col md:flex-row items-center justify-center text-white bg-black gap-6 pt-24 md:pt-40">
       <p className="font-mons-sans hero-prefix text-sm prefix">
         Hello, I&apos;m
       </p>

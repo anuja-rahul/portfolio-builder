@@ -63,4 +63,24 @@ export const aboutPageConfig = {
 export const projectsPageConfig = {
   description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
               odit quae dicta maxime excepturi.`,
+  projects: [
+    {
+      name: "Project 1",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, odit quae dicta maxime excepturi.",
+      imgUrl: "/img/project-1.webp",
+    },
+    {
+      name: "Project 2",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, odit quae dicta maxime excepturi.",
+      imgUrl: "/img/project-2.webp",
+    },
+    {
+      name: "Project 3",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, odit quae dicta maxime excepturi.",
+      imgUrl: "/img/project-3.webp",
+    },
+  ],
 };

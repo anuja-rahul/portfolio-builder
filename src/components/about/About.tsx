@@ -74,7 +74,7 @@ export default function About() {
             <p className="mb-4 text-lg text-white md:text-xl paragraph-one overflow-y-hidden text-flow">
               {aboutPageConfig.paragraphOne}
             </p>
-            <p className="mb-4 text-xl text-white mb:text-2xl paragraph-two overflow-y-hidden text-flow">
+            <p className="mb-4 text-lg text-white md:text-xl paragraph-one overflow-y-hidden text-flow">
               {aboutPageConfig.paragraphTwo}
             </p>
             <div className="titles">
