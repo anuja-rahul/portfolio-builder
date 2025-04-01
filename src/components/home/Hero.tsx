@@ -35,7 +35,7 @@ export default function Hero() {
   );
 
   return (
-    <section className="w-screen min-h-dvh flex flex-col items-center justify-center bg-black gap-6 text-white">
+    <section className="w-screen min-h-dvh flex flex-col md:flex-row items-center justify-center text-white bg-black gap-6 pt-24 md:pt-40">
       <p className="font-mons-sans hero-prefix text-sm prefix">
         Hello, I&apos;m
       </p>
