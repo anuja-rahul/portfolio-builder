@@ -1,6 +1,6 @@
 # Portfolio Builder Template
 
-This portfolio builder template allows users to generate a complete portfolio website by simply editing the configuration file located at `config/site.tsx`.
+This portfolio builder template allows users to generate a complete portfolio website by simply editing the configuration file located at `src/config/site.tsx`.
 
 ## Customization
 
