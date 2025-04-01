@@ -23,33 +23,13 @@ export default function Hero() {
         y: 400,
       });
 
-      tl.to(prefixText.words, {
+      tl.to([prefixText.words, suffixText.words, heroText.chars], {
         y: 0,
         duration: 0.8,
         stagger: 0.075,
         ease: "power4.out",
         delay: 1,
-      })
-        .to(
-          heroText.chars,
-          {
-            y: 0,
-            duration: 1,
-            stagger: 0.075,
-            ease: "back.out(1)",
-          },
-          "-=0.5"
-        )
-        .to(
-          suffixText.words,
-          {
-            y: 0,
-            duration: 0.6,
-            stagger: 0.07,
-            ease: "power4.out",
-          },
-          "-=0.6"
-        );
+      });
     },
     { scope: containerRef }
   );
