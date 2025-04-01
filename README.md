@@ -1,64 +1,112 @@
-# Portfolio Builder
+# Portfolio Builder Template
 
-## Project Overview
+This portfolio builder template allows users to generate a complete portfolio website by simply editing the configuration file located at `config/site.tsx`.
 
-This project is a **Portfolio Builder** designed to help users create and manage their personal or professional portfolios with ease. It provides a user-friendly interface and customizable template to showcase skills, projects, and achievements. The application is ideal for developers, designers, and professionals looking to present their work in an organized and visually appealing manner.
+## Customization
 
-## Features
+Users can personalize their portfolio by modifying just the data in the `site.tsx` file, such as:
 
-- **Customizable Templates**: Choose from a variety of pre-designed templates to suit your style.
-- **Project Showcase**: Add and display your projects with descriptions, images, and links.
-- **Skill Management**: Highlight your skills and expertise in an organized way.
-- **Responsive Design**: Portfolios are optimized for both desktop and mobile devices.
-- **Easy Editing**: Update your portfolio content effortlessly through the configuration file.
+- Personal information
+- Project details
+- Skills
+- Other relevant content
 
-## Setup Instructions
+The template will automatically generate the site based on the provided data, ensuring a seamless and efficient portfolio creation process.
 
-Follow these steps to set up the Portfolio Builder project:
+## Key Features
 
-1. **Fork and Clone the Repository**:
+- **Easy-to-edit configuration file**: `src/config/site.tsx`
+- **Automatic generation**: Creates a fully functional portfolio website
+- **No coding required**: No need for additional coding or manual adjustments
+
+## Usage
+
+1. Open the `config/site.tsx` file.
+2. Update the file with your personal and professional details.
+3. Save the changes, and the template will generate the portfolio site accordingly.
+
+## Getting Started
+
+To get started with this portfolio builder template:
+
+1. **Fork the Repository**:
+    - Go to the [GitHub repository](https://github.com/anuja-rahul/portfolio-builder) for this project.
+    - Click the **"Fork"** button in the top-right corner to create a copy of the repository under your GitHub account.
+
+2. **Clone the Repository**:
+    - Open a terminal on your computer.
+    - Run the following command to clone the forked repository to your local machine:
+
+      ```bash
+      git clone https://github.com/anuja-rahul/portfolio-builder.git
+      ```
+
+3. **Navigate to the Project Directory**:
+    - Change into the project directory by running:
+
+      ```bash
+      cd portfolio-builder
+      ```
+
+4. **Install Dependencies**:
+    - Run the following command to install the required dependencies:
+
+      ```bash
+      npm install --legacy-peer-deps
+      ```
+
+    > **Note**: Always use the `--legacy-peer-deps` flag when installing dependencies to avoid potential errors with peer dependencies.
+
+You are now ready to customize and build your portfolio!
+
+## Running the Development Build
+
+To preview your portfolio during development:
+
+1. Ensure you have Node.js installed on your system.
+2. Open a terminal and navigate to the project directory.
+3. Run the following commands:
 
     ```bash
-    git clone https://github.com/anuja-rahul/portfolio-builder
-    cd portfolio-builder
+    npm install
+    npm run dev
     ```
 
-2. **Install Dependencies**:
-    Ensure you have Node.js installed, then run:
+4. Open your browser and go to `http://localhost:3000` to view your portfolio.
 
-    ```bash
-    npm install --legacy-peer-deps
-    ```
+## Building for Production
 
-3. **Run the Application**:
-    Start the development server:
+To build the portfolio for production:
 
-    ```bash
-    npm start
-    ```
-
-    The application will be accessible at `http://localhost:3000`.
-
-4. **Build for Production** (Optional):
-    To create a production-ready build, run:
+1. Open a terminal and navigate to the project directory.
+2. Run the following command:
 
     ```bash
     npm run build
     ```
 
-5. **Deploy**:
-    Deploy the application to your preferred hosting platform (e.g., Vercel, Netlify, Heroku).
+3. After the build process completes, the static files will be available in the `out` directory.
+4. Deploy the contents of the `out` directory to your preferred hosting platform.
 
-## Contribution Guidelines
+## Deploying to Vercel
 
-- Fork the repository and create a new branch for your feature or bug fix.
-- Submit a pull request with a detailed description of your changes.
-- Ensure your code follows the project's coding standards and is well-documented.
+<details>
+<summary>How to connect your GitHub repository to Vercel and deploy</summary>
 
-## License
+1. Push your project to a GitHub repository.
+2. Go to [Vercel](https://vercel.com/) and sign in or create an account.
+3. Click on the **"New Project"** button.
+4. Select **"Import Git Repository"** and connect your GitHub account if not already connected.
+5. Choose your repository from the list and click **"Import"**.
+6. Configure the project settings if needed, then click **"Deploy"**.
+7. Vercel will build and deploy your portfolio. Once completed, you will receive a live URL for your site.
 
-This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute it as per the license terms.
+</details>
 
-## Support
+Start building your portfolio effortlessly today!
 
-For any issues or feature requests, please open an issue in the repository or contact the project maintainers.
+## Contributions and Feedback
+
+We welcome contributions to improve this portfolio builder template! If you have suggestions, bug reports, or feature requests, feel free to open an issue or submit a pull request on the [GitHub repository](https://github.com/anuja-rahul/portfolio-builder).
+
+If you find this project helpful, consider giving it a ⭐ on GitHub. Your support is greatly appreciated!

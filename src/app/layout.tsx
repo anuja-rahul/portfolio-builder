@@ -5,6 +5,7 @@ import SmoothScrollContext from "@/components/page-effects/SmoothScrollContext";
 import { siteConfig } from "@/config/site";
 import NavBar from "@/components/ui/NavBar";
 import { ViewTransitions } from "next-view-transitions";
+import Footer from "@/components/ui/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -58,6 +59,7 @@ export default function RootLayout({
           <SmoothScrollContext>
             <NavBar />
             {children}
+            <Footer />
           </SmoothScrollContext>
         </body>
       </html>

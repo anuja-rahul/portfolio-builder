@@ -3,7 +3,7 @@ import { useTransitionRouter } from "next-view-transitions";
 import Link from "next/link";
 import { ComponentProps } from "react";
 
-interface TransitionLinkProps extends ComponentProps<typeof Link> {
+export interface TransitionLinkProps extends ComponentProps<typeof Link> {
   children: React.ReactNode;
   href: string;
 }

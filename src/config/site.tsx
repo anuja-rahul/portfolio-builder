@@ -27,3 +27,17 @@ export const navBarConfig = [
 export const homePageConfig = {
   title: "Jhon",
 };
+
+export const aboutPageConfig = {
+  name: siteConfig.name,
+  titles: "Software Engineer | Tech Enthusiast",
+  paragraphOne: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
+              odit quae dicta maxime excepturi, vel corporis perspiciatis atque
+              suscipit adipisci modi unde minus, maiores ea impedit debitis iste
+              beatae pariatur.`,
+  // You can leave paragraph two blank if not needed
+  paragraphTwo: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
+              odit quae dicta maxime excepturi, vel corporis perspiciatis atque
+              suscipit adipisci modi unde minus, maiores ea impedit debitis iste
+              beatae pariatur.`,
+};
