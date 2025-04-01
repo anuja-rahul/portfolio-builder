@@ -70,7 +70,7 @@ const Tab = ({
         const { width } = ref.current.getBoundingClientRect();
         setPosition({ width, opacity: 1, left: ref.current.offsetLeft });
       }}
-      className="relative z-10 block curser-pointer px-3 py-1.5 text-xs uppercase
+      className="relative z-10 block cursor-pointer px-3 py-1.5 text-xs uppercase
             text-white mix-blend-difference md:px-4 md:py-2 md:text-sm"
     >
       {external ? (
