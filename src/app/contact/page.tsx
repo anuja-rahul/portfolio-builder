@@ -1,3 +1,4 @@
+import Contact from "@/components/contact/Contact";
 import { siteConfig } from "@/config/site";
 import { Metadata } from "next";
 
@@ -9,10 +10,10 @@ export const metadata: Metadata = {
   description: siteConfig.description,
 };
 
-export default function Contact() {
+export default function ContactPage() {
   return (
-    <main className="relative min-h-screen w-screen max-w-screen p-0 m-0 overflow-x-hidden place-content-center bg-slate-500">
-      Contacts Page
+    <main className="relative min-h-screen w-screen max-w-screen p-0 m-0 overflow-x-hidden place-content-center bg-black/90">
+      <Contact />
     </main>
   );
 }

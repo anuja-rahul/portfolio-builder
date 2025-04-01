@@ -4,10 +4,11 @@ import { navBarConfig } from "@/config/site";
 import { ReactNode, useRef, useState } from "react";
 import TransitionLink from "../page-transition/TransitionLink";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 export default function NavBar() {
   return (
-    <div className="w-screen mt-4 font-mona-sans squishy-text z-10 absolute">
+    <div className="w-screen mt-4 font-mona-sans squishy-text z-10 absolute opacity-90 hover:opacity-100 transition-opacity duration-500 ease-in-out">
       <SlideTabs />
     </div>
   );
@@ -31,7 +32,12 @@ const SlideTabs = () => {
       className="relative mx-auto flex w-fit rounded-full border-2 border-black bg-white p-1"
     >
       {navBarConfig.map((item) => (
-        <Tab key={item.name} href={item.href} setPosition={setPosition}>
+        <Tab
+          key={item.name}
+          href={item.href}
+          setPosition={setPosition}
+          external={item.name === "CV"}
+        >
           <span className="hidden md:flex">{item.name}</span>
           <span className="flex md:hidden">{item.icon}</span>
         </Tab>
@@ -42,10 +48,12 @@ const SlideTabs = () => {
 };
 
 const Tab = ({
+  external,
   children,
   href,
   setPosition,
 }: {
+  external?: boolean;
   children: ReactNode;
   href: string;
   setPosition: React.Dispatch<
@@ -65,7 +73,13 @@ const Tab = ({
       className="relative z-10 block curser-pointer px-3 py-1.5 text-xs uppercase
             text-white mix-blend-difference md:px-4 md:py-2 md:text-sm"
     >
-      <TransitionLink href={href}>{children}</TransitionLink>
+      {external ? (
+        <Link href={href} target="_blank" rel="noopener noreferrer">
+          {children}
+        </Link>
+      ) : (
+        <TransitionLink href={href}>{children}</TransitionLink>
+      )}
     </li>
   );
 };
