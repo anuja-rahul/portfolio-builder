@@ -68,7 +68,7 @@ To preview your portfolio during development:
 3. Run the following commands:
 
     ```bash
-    npm install
+    npm install --legacy-peer-deps
     npm run dev
     ```
 
