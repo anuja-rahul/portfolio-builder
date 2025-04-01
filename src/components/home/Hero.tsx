@@ -1,9 +1,9 @@
 "use client";
 
 import { homePageConfig } from "@/config/site";
+import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
 import SplitType from "split-type";
 
 gsap.registerPlugin(useGSAP);
@@ -53,7 +53,6 @@ export default function Hero() {
     },
     { scope: containerRef }
   );
-
 
   return (
     <section className="w-screen min-h-dvh flex flex-col items-center justify-center bg-black gap-6 text-white">

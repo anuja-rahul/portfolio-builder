@@ -1,4 +1,5 @@
 import { siteConfig } from "@/config/site";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -10,8 +11,16 @@ export default function Footer() {
             Reserved.
           </p>
         </div>
-        <div className="flex flex-col md:items-end items-center justify-center md:w-1/2 w-full h-full">
-          Links
+        <div className="flex flex-row md:items-end items-center justify-evenly w-fit h-full my-2">
+          {siteConfig.contactLinks.map((item) => (
+            <span key={item.name} className="flex w-fit h-fit">
+              {item.link && (
+                <Link href={item.link} className="text-white mx-2 transition-all duration-200 hover:-translate-y-[2px] ease-in-out">
+                  {item.icon}
+                </Link>
+              )}
+            </span>
+          ))}
         </div>
       </div>
     </footer>
