@@ -1,6 +1,11 @@
 # Portfolio Builder Template
 
+🚀 Build your dream portfolio with the Portfolio Builder Template – a trendy, minimal, and fully animated solution for showcasing your work! 🌟
+
 This portfolio builder template allows users to generate a complete portfolio website by simply editing the configuration file located at `src/config/site.tsx`.
+
+A live instance of this project can be found at:
+[Live Portfolio Builder Template](https://portfolio-builder-template.vercel.app/)
 
 ## Customization
 
@@ -13,11 +18,16 @@ Users can personalize their portfolio by modifying just the data in the `site.ts
 
 The template will automatically generate the site based on the provided data, ensuring a seamless and efficient portfolio creation process.
 
-## Key Features
+## Features
 
-- **Easy-to-edit configuration file**: `src/config/site.tsx`
-- **Automatic generation**: Creates a fully functional portfolio website
-- **No coding required**: No need for additional coding or manual adjustments
+- **Effortless Customization**: Personalize your portfolio by editing just one file (`src/config/site.tsx`)—no coding required!
+- **Trendy Minimal Design**: A sleek and modern design to showcase your work professionally.
+- **Fully Animated**: Built with the latest View Transition API and smooth scrolling powered by Lenis for a seamless user experience.
+- **SEO Optimized**: Best-in-class programmatic SEO support to ensure your portfolio ranks well in search engines.
+- **Responsive and Mobile-Friendly**: Designed to look great on all devices, from desktops to smartphones.
+- **Quick Setup**: Get started in minutes with simple instructions.
+- **Live Preview**: Preview your changes instantly during development.
+- **Deploy Anywhere**: Easily deploy to platforms like Vercel, Netlify, or your preferred hosting service.
 
 ## Usage
 
