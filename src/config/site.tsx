@@ -33,7 +33,7 @@ export const siteConfig = {
   contactLinks: [
     // include your social media links here
     { name: "Github", link: "/", icon: <FaGithub /> },
-    { name: "FaceBook", link: "", icon: <FaFacebook /> },
+    { name: "Facebook", link: "", icon: <FaFacebook /> },
     { name: "LinkedIn", link: "/", icon: <FaLinkedin /> },
     { name: "Twitter", link: "/", icon: <FaXTwitter /> },
     { name: "Instagram", link: "/", icon: <FaInstagram /> },
