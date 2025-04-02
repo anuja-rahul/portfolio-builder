@@ -23,9 +23,13 @@ export const siteConfig = {
   description:
     "A software engineer with a passion for building web applications.",
   // if you have a custom domain, you can add it here
-  url: "https://johndoe.dev",
+  //  it's very important you include the correct url here
+  // otherwise the generated sitemap.xml and robots.txt will display the wrong url
+  // Do not include a slash at the end of the url
+  // e.g. https://example.com
+  url: "https://portfolio-builder-template.vercel.app",
   creator: "@johnDoe",
-  ogImgUrl: "/img/opengraph-image.jpg",
+  ogImgUrl: "img/opengraph-image.jpg",
   contactLinks: [
     // include your social media links here
     { name: "Github", link: "/", icon: <FaGithub /> },
@@ -36,13 +40,18 @@ export const siteConfig = {
   ],
 };
 
-export const navBarConfig = [
+export const siteMapConfig = [
   //  Update accordingly to your specifications
   { name: "Home", href: "/", icon: <FaHome /> },
   { name: "About", href: "/about", icon: <LuText /> },
   { name: "Projects", href: "/projects", icon: <FaProjectDiagram /> },
   { name: "Contact", href: "/contact", icon: <RiContactsLine /> },
+];
+
+export const navBarConfig = [
+  ...siteMapConfig,
   // highly recommend storing your resume in a public place like Google Drive or Dropbox and linking it here
+  // and replace the href with the link to your resume
   { name: "CV", href: "https://drive.google.com", icon: <IoDocument /> },
 ];
 
@@ -71,6 +80,8 @@ export const projectsPageConfig = {
   // You can either the image paths to match or change the images in the public/img folder
   description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
               odit quae dicta maxime excepturi.`,
+
+  // You can include upto 3 projects in here, anything more will be ignored
   projects: [
     {
       name: "Project 1",

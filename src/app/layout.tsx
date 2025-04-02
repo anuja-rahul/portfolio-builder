@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     creator: siteConfig.creator,
     title: siteConfig.longName,
     description: siteConfig.description,
-    images: [{ url: "/img/opengraph-image.jpg" }],
+    images: [{ url: "img/opengraph-image.jpg" }],
   },
   openGraph: {
     type: "website",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     title: siteConfig.longName,
     description: siteConfig.description,
-    images: [{ url: "/img/opengraph-image.jpg" }],
+    images: [{ url: "img/opengraph-image.jpg" }],
     siteName: siteConfig.name,
   },
 };
